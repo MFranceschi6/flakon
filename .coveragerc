@@ -1,0 +1,4 @@
+[run]
+omit =
+	flakon/__init__.py
+	flakon/docs.py
