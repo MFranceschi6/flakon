@@ -153,7 +153,7 @@ class SwaggerBlueprint(JsonBlueprint):
                 ops[options['operationId']] = options
         return ops
 
-    def operation(self, operation_id, **options):
+    def operation(self, operation_id, **options):  # pragma: no cover
         def decorator(f):
             endpoint = options.pop("endpoint", f.__name__)
             if "methods" in options:
@@ -169,7 +169,7 @@ class SwaggerBlueprint(JsonBlueprint):
 
         return decorator
 
-    def add_url_rule(self, rule, endpoint=None, view_func=None, **options):
+    def add_url_rule(self, rule, endpoint=None, view_func=None, **options):  # pragma: no cover
         if view_func is not None:
             def _json(f):
                 operation_id = options['operation_id']
