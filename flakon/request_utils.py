@@ -53,16 +53,16 @@ def load_configuration():
         CONFIG['STATISTICS_ENDPOINT'] = p['STATISTICS_ENDPOINT']
 
         if 'DATA_SERVICE' in os.environ:
-            CONFIG['DATA_SERVICE'] = os.environ['DATA_SERVICE']
+            CONFIG['DATA_SERVICE'] = 'http://' + os.environ['DATA_SERVICE'] + ':5002'
 
         if 'CHALLENGES_SERVICE' in os.environ:
-            CONFIG['CHALLENGES_SERVICE'] = os.environ['CHALLENGES_SERVICE']
+            CONFIG['CHALLENGES_SERVICE'] = 'http://' + os.environ['CHALLENGES_SERVICE'] + ':5003'
 
         if 'OBJECTIVES_SERVICE' in os.environ:
-            CONFIG['OBJECTIVES_SERVICE'] = os.environ['OBJECTIVES_SERVICE']
+            CONFIG['OBJECTIVES_SERVICE'] = 'http://' + os.environ['OBJECTIVES_SERVICE'] + ':5004'
 
         if 'STATISTICS_SERVICE' in os.environ:
-            CONFIG['STATISTICS_SERVICE'] = os.environ['STATISTICS_SERVICE']
+            CONFIG['STATISTICS_SERVICE'] = 'http://' + os.environ['STATISTICS_SERVICE'] + ':5001'
 
 
 def add_resource(endpoint=None, resource=None):
