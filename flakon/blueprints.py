@@ -182,6 +182,7 @@ class SwaggerBlueprint(JsonBlueprint):
                         self.check_path(request.path, op)
                         self.check_args(request.args, op)
                         self.check_header(request.headers, op)
+                        print(request.json)
                         if request_schema is not None:
                             validate(request.json, request_schema)
                         res = f(*args, **kw)
