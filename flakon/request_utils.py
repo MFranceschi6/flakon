@@ -166,10 +166,8 @@ def retry_request(func, retries=6):
             try:
                 res = func(*args, **kw)
             except requests.exceptions.RequestException:
-                pass
-
-            time.sleep(t)
-            t += 2
+                time.sleep(t)
+                t += 2
 
         if count == retries - 1:
             res = func(*args, **kw)
